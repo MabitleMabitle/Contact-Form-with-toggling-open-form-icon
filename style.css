@@ -1,0 +1,230 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  outline: none;
+  font-family: "Poppins", sans-serif;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+.container {
+  inline-size: 100%;
+  block-size: 100vh;
+  background-color: #eee;
+}
+
+.loading {
+  inline-size: 100%;
+  block-size: 100%;
+  position: absolute;
+  inset-block-start: 0;
+  inset-inline-start: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: all 0.3s 0.3s;
+}
+
+.change .loading {
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.3s;
+}
+
+.loading-background {
+  inline-size: 12rem;
+  block-size: 12rem;
+  background-color: #ff4b5a;
+  border-radius: 50%;
+  box-shadow: 0 1rem 3rem rgba(255, 75, 90, 0.5);
+  animation: loadingAnimation 0.9s ease-in-out infinite;
+}
+
+@keyframes loadingAnimation {
+  0% {
+    inline-size: 12rem;
+    block-size: 12rem;
+    background-color: #ff4b5a;
+  }
+  50% {
+    inline-size: 14rem;
+    block-size: 14rem;
+    background-color: #ff616f;
+  }
+}
+
+.loading i {
+  inline-size: 12rem;
+  block-size: 12rem;
+  color: #fff;
+  font-size: 4rem;
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+
+.form-wrapper {
+  inline-size: 60%;
+  block-size: 70rem;
+  background-color: #fff;
+  position: absolute;
+  inset-block-start: 50%;
+  inset-inline-start: 50%;
+  transform: translate(-50%, -50%);
+  box-shadow: 0 3rem 6rem rgba(0, 0, 0, 0.1);
+  border-radius: 1rem;
+  /* hiding */
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.3s;
+}
+
+.change .form-wrapper {
+  /* un-hiding */
+  opacity: 1;
+  visibility: visible;
+  transition: all 0.3s 0.3s;
+}
+
+.close-button {
+  position: absolute;
+  inset-block: -1.5rem;
+  inset-inline-end: -1.5rem;
+  inline-size: 3rem;
+  block-size: 3rem;
+  background-color: #fff;
+  border: 0.1rem solid #eee;
+  border-radius: 50%;
+  box-shadow: 0 0.1rem 0.1rem rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+.close-button:hover {
+  background: #222;
+  color: #fff;
+  border: 0.1rem solid #fff;
+}
+
+.contact-form {
+  inline-size: 100%;
+  block-size: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  padding-inline: 15rem;
+}
+
+.form-heading {
+  font-size: 4rem;
+  color: #333;
+}
+
+.input-groups {
+  inline-size: 100%;
+  display: flex;
+  justify-content: space-between;
+  margin-block-end: 3rem;
+}
+
+.input-group {
+  inline-size: 40rem;
+  block-size: 6rem;
+}
+
+.field-label {
+  font-size: 1.4rem;
+  color: #888;
+}
+
+.field {
+  inline-size: 90%;
+  block-size: 100%;
+  border: none;
+  border-block-end: 0.2rem solid #bbb;
+  font-size: 1.8rem;
+  padding-block-end: 2rem;
+  transition: border-bottom 0.3s ease-in-out;
+}
+
+.field:focus {
+  border-block-end: 0.2rem solid #ff4b5a;
+}
+
+.field::placeholder {
+  color: #222;
+  transition: color 0.3s;
+}
+
+/* hide the placeholder once we focus */
+.field:focus::placeholder {
+  color: transparent;
+}
+
+.textarea-group {
+  display: flex;
+  flex-direction: column;
+}
+
+.textarea-group textarea {
+  block-size: 12rem;
+  border-block-end: 0.2rem solid #bbb;
+  padding-block-start: 1rem;
+  resize: none;
+}
+
+.submit-button {
+  inline-size: 18rem;
+  block-size: 5rem;
+  background-color: #ff4b5a;
+  border: none;
+  border-radius: 3rem;
+  color: #fff;
+  font-size: 1.5rem;
+  box-shadow: 0 0.3rem 1rem rgba(255, 75, 90, 0.5);
+  cursor: pointer;
+  position: relative;
+  transition: all 0.5s;
+}
+
+.submit-button strong {
+  /* relatively to .submit-button */
+  position: absolute;
+  inset-block-start: 50%;
+  inset-inline-start: 5rem;
+  /* centering */
+  transform: translateY(-50%);
+}
+
+.submit-button i {
+  font-size: 1.8rem;
+  position: absolute;
+  inset-block-start: 50%;
+  inset-inline-end: 4.5rem;
+  /* centering */
+  transform: translateY(-50%);
+  transition: right 0.5s;
+}
+
+.submit-button:hover {
+  background-color: #333;
+  box-shadow: 0 0.3rem 1rem rgba(0, 0, 0, 0.5);
+}
+
+.submit-button:hover i {
+  inset-inline-end: 3rem;
+}
+
+.contact-form p {
+  font-size: 1.6rem;
+  color: #888;
+}
+
+.contact-form p strong {
+  color: #ff4b5a;
+}
